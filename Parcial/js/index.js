@@ -163,6 +163,8 @@ function escuchandoBtnDeleteAll() {
 
   btn.addEventListener("click", async (e) => {
 
+    mostrarSpinner();
+
     const rta = confirm('Desea eliminar todos los Items?');
 
     if(rta) {
@@ -170,9 +172,11 @@ function escuchandoBtnDeleteAll() {
 
       try {
         await limpiar(KEY_STORAGE);
+        ocultarSpinner();
         rellenarTabla();
       }
       catch (error) {
+        ocultarSpinner();
         alert(error);
       }
     }
