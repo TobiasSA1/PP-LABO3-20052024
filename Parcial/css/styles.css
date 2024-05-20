@@ -1,0 +1,145 @@
+/* styles.css */
+/*NAV BAR*/
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    padding: 10px 20px;
+
+    background-color: rgb(51, 51, 51);
+    border: 2px solid black;
+
+}
+
+.navbar-logo {
+    height: 40px;
+    color: white;
+    font-size: 24px;
+}
+
+.navbar-menu {
+
+    display: flex;
+}
+
+.navbar-toggle {
+  
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.navbar-toggle .bar {
+  width: 25px;
+  height: 5px;
+  margin: 3px 0;
+  background-color: black;
+}
+
+/*Imagen para HEADER (Si se pide).*/
+.div-imagen{
+    height: 200px;
+    width: 100%;
+    box-shadow: 0px 0px 6px black; 
+    background: url("../assets/images/header.jpg")center center/cover;
+}
+
+.form-group{
+    
+    display: flex;
+    margin-left: 0;
+    padding: 20px;
+    gap: 10px;
+
+    background-color: antiquewhite;
+    border: 1px solid black;
+    border-radius: 10px;
+    
+}
+
+.column{
+
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding-top: 20px;
+  
+}
+
+.row{
+  display: flex;
+  flex-direction: row;
+  padding-bottom: 20px;
+}
+
+/*CONTAINER DEL CONTENIDO*/
+.container-sections{
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+/*BOTON DE ELIMINAR TODO.*/
+.container-btn-delete-all {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.container-btn-delete-all .btn {
+  background-color: rgb(167, 56, 56);
+  max-width: 7rem;
+  margin: 20px;
+}
+
+.oculto{
+  display: none;
+}
+
+#btnGuardar{
+  background-color: rgb(83, 122, 120);
+}
+#btnCancelar{
+  background-color: rgb(146, 146, 146);
+}
+#btnEliminar{
+  background-color: rgb(167, 56, 56);
+}
+
+#btnEditar{
+  background-color: rgb(83, 122, 120);
+}
+
+
+/* MEDIA QUERIS */
+@media (max-width: 800px) {
+
+    .navbar-menu {
+
+        background-color: rgb(51, 51, 51);
+        display: none;
+        flex-direction: column;
+        width: 50%;
+        position: absolute;
+        top:51px;
+        right: 0;
+        border: 1px solid black;
+        border-top: 0px;
+        box-shadow: 4px 4px black;
+        padding: 20px;
+        margin-left: 0;
+
+    }
+
+    .navbar-menu.active {
+        display: flex;
+        align-content: end;
+        align-items: center;  
+    }
+
+    .navbar-toggle {
+        display: flex;
+    }
+
+}

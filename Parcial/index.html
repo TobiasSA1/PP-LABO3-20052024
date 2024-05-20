@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- ICONO DE LA PAGINA. -->
+    <link rel="icon" href="./assets/images/logo.svg" type="image/x-icon">
+    <!-- TITULO DE LA PAGINA-->
+    <title>Modelo de Parcial</title>
+    <!-- ARCHIVOS DE ESTILO CSS-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/normalize.css">
+    <link rel="stylesheet" href="./css/styles.css">
+
+</hWead>
+
+<body>
+
+    <header>
+
+        <!-- NAV BAR -->
+        <nav class="navbar">
+            
+          <!-- LOGO DE LA PAGINA -->
+            <img class="navbar-logo" src="./assets/images/logo.svg" alt="Logo Principal" />
+            <ul class="navbar-menu">
+                <li><a href="#about">About</a></li>
+                <li><a href="#ads">Anuncios</a></li>
+                <li><a href="#blogs">Blogs</a></li>
+                <li><a href="#contact">Contáctanos</a></li>
+            </ul>
+                <div class="navbar-toggle" id="navbar-toggle">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+
+        </nav>
+        <!-- NAV BAR -->
+
+    </header>
+
+    
+      <div class="div-imagen">
+
+      <h1>Administrador de monedas.</h1>
+
+    </div>
+    
+    <!-- CONTENIDO DE LA PAGINA -->
+    <main>
+    
+    
+      <div class="container py-5">
+        <div class="row justify-content-center">
+          <div class="col-md-6">
+            <fieldset>
+              <legend class="text-center mb-4">Formulario de Parcial</legend>
+              <form action="" method="post" id="form-item" class="needs-validation form-group column" novalidate>
+                <input type="number" name="id" id="id" hidden>
+
+                <!-------- BLOQUE -------->
+                <div class="mb-3">
+                  <label for="nombre" class="form-label">Nombre:</label>
+                  <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Nombre.." required>
+                </div>
+                
+                <!-------- BLOQUE -------->
+                <div class="mb-3">
+                  <label for="simbolo" class="form-label">Simbolo:</label>
+                  <input type="text" class="form-control" id="simbolo" name="simbolo" placeholder="Simbolo.." required>
+                </div>
+
+                <input type="number" name="fechaCreacion" id="fechaCreacion" hidden>
+
+                <!-------- BLOQUE -------->
+                <div class="mb-3">
+                  <label for="precioActual" class="form-label">Precio Actual:</label>
+                  <input type="number" class="form-control" id="precioActual" name="precioActual" placeholder="Precio.." required>
+
+                </div>
+
+                <!-------- BLOQUE -------->
+                <div class="mb-3">
+                  <div class="col">
+                  <label for="consenso">Tipo de consenso:</label>
+                  <select id="consenso" name="consenso">
+                      <option value="Proof of Work">Proof of Work</option>
+                      <option value="Proof of Stake">Proof of Stake</option>
+                  </select>
+                  </div>
+                  </div>
+
+                <!-------- BLOQUE -------->
+                <div class="mb-3">
+                  <label for="circulacion" class="form-label">Cantidad cirulacion:</label>
+                  <input type="number" class="form-control" id="circulacion" name="circulacion" placeholder="Cantidad circulacion.." required>
+
+                </div>
+
+                <!-------- BLOQUE -------->
+                <div class="mb-3">
+                <div class="col">
+                <label for="algoritmo">Algoritmo:</label>
+                <select id="algoritmo" name="algoritmo">
+                    <option value="SHA-256">SHA-256</option>
+                    <option value="Ethash">Ethash</option>
+                    <option value="Scrypt">Scrypt</option>
+                    <option value="X11">X11</option>
+                </select>
+                </div>
+                </div>
+
+                <!-------- BLOQUE -------->
+                <div class="mb-3">
+                  <label for="pagina" class="form-label">Sitio Web:</label>
+                  <input type="text" class="form-control" id="pagina" name="pagina" placeholder="Sitio web.." required>
+                </div>
+
+
+                <!-------- BOTONES -------->
+                <div class="mb-3 text-center">
+                  <button id="btnGuardar" class="btn btn-primary" type="submit" value="Guardar">Guardar</button>
+                  <button id="btnEditar" class="btn btn-primary oculto" type="button" value="Editar">Editar</button>
+                  <button id="btnCancelar" class="btn btn-secondary oculto" type="button" value="Cancelar">Cancelar</button>
+                  <button id="btnEliminar" class="btn btn-danger oculto" type="button" value="Eliminar">Eliminar</button>
+                
+                </div>
+
+              </form>
+            </fieldset>
+          </div>
+        </div>
+      </div>
+      
+      
+      <!-- SPINNER -->
+      <div id="spinner" class="spinner">
+        <!-- GIF DEL SPINNER -->
+            <img src="./assets/images/spinner.gif" alt="Spinner" class="spinner-img">
+      </div>
+
+      <!-- BOTON BORRAR TODO -->
+      <div class="container-btn-delete-all flex">
+        <button id="btn-delete-all" class="btn btn-danger" type="button" value="Eliminar" color = "red" >Eliminar Todo</button>
+      </div>
+
+      
+      <!-- TABLA -->
+      <div class="container text-center">
+            <table id="table-items" class="table table-responsive">
+                <thead>
+                    <tr>
+                        <th scope="col">id</th>
+                        <th scope="col">nombre</th>
+                        <th scope="col">simbolo</th>
+                        <th scope="col">fechaCreacion</th>
+                        <th scope="col">precioActual</th>
+                        <th scope="col">consenso</th>
+                        <th scope="col">circulacion</th>
+                        <th scope="col">algoritmo</th>
+                        <th scope="col">pagina</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+      </div>
+
+    </main>
+
+    
+    <!-- FOOOTER -->
+    <footer>
+      <nav class="navbar">
+        <ul class="navbar-menu">
+    
+          <li><a href="#">About</a></li>
+          <li><a href="#">Anuncios</a></li>
+          <li><a href="#">Blogs</a></li>
+          <li><a href="#">Contactános</a></li>
+    
+        </ul>
+    
+        <p>Todos los derechos reservados <date>2021</date> &copy;</p>
+      </nav>
+    </footer>
+
+    <!-- CARGA DE SCRIPTS AL FINAL DEL ARCHIVO.-->
+    <script src="./js/index.js" type="module"></script>
+    
+  </body>
+
+
+</html>
