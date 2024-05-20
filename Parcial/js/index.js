@@ -246,6 +246,10 @@ function handlerEditar() {
   const btn = document.getElementById("btnEditar");
 
   btn.addEventListener("click", async (e) => {
+    
+    if (!validarFormulario(formulario)) {
+      return;
+    }
 
     e.preventDefault();
     
