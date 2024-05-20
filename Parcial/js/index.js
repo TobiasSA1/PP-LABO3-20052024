@@ -108,12 +108,12 @@ function escuchandoFormulario() {
 
     const consenso = formulario.querySelector('#consenso').value;
     const algoritmo = formulario.querySelector('#algoritmo').value;
-
+    const fechaFormateada = obtenerFechaFormateada();
     const model = new Cripto(
       fechaActual.getTime(),
       formulario.querySelector("#nombre").value,
       formulario.querySelector("#simbolo").value,
-      fechaActual.getDate(),
+      fechaFormateada,
       formulario.querySelector("#precioActual").value,
       consenso,
       formulario.querySelector("#circulacion").value,
@@ -246,7 +246,7 @@ function handlerEditar() {
   const btn = document.getElementById("btnEditar");
 
   btn.addEventListener("click", async (e) => {
-    
+
     if (!validarFormulario(formulario)) {
       return;
     }
@@ -270,12 +270,12 @@ function handlerEditar() {
 
         const consenso = formulario.querySelector('#consenso').value;
         const algoritmo = formulario.querySelector('#algoritmo').value;
-    
+        const fechaFormateada = obtenerFechaFormateada();
         const model = new Cripto(
           fechaActual.getTime(),
           formulario.querySelector("#nombre").value,
           formulario.querySelector("#simbolo").value,
-          fechaActual.getDate(),
+          fechaFormateada,
           formulario.querySelector("#precioActual").value,
           consenso,
           formulario.querySelector("#circulacion").value,
@@ -400,4 +400,12 @@ function validarFormulario(formulario) {
   }
   
   return true;
+}
+
+function obtenerFechaFormateada() {
+  const fechaActual = new Date();
+  const dia = fechaActual.getDate();
+  const mes = fechaActual.getMonth() + 1; // Los meses son indexados desde 0
+  const año = fechaActual.getFullYear();
+  return `${dia}/${mes}/${año}`;
 }
